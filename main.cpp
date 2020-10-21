@@ -263,6 +263,35 @@ int main(int argc, const char * argv[]) {
      Decode(pathFinite, pathDecode);
 }
 
+       string pathInitial(argv[1]);
+          cout <<"pathInitial     "<<pathInitial<<endl;
+
+          string DecodeOrCode(argv[2]);
+       cout <<"DecodeOrCode    " <<DecodeOrCode<<endl;
+
+          std::stringstream convert(argv[3]);
+          int countSymbols;
+          if (!(convert >> countSymbols)) // выполняем конвертацию
+              countSymbols = 1;
+         cout << "countSymbols     " << countSymbols;
+
+
+          string pathFinite(argv[4]);
+          cout<<"pathFinite    "<<pathFinite<<endl;
+
+
+
+          if((std::string(argv[2]) == "-e") || (std::string(argv[2]) == "-E")){
+              cout <<"e or d"<< std::string(argv[2])<<endl;
+              Encode(argv[1], countSymbols,argv[4]);
+              return 0;
+          }
+          if((std::string(argv[2]) == "-d") || (std::string(argv[2]) == "-D")){
+             cout <<"e or d"<< std::string(argv[2])<<endl;
+              Decode(argv[1],argv[4]);
+              return 0;
+          }
+
 
 
 
